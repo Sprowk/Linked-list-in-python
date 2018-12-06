@@ -89,16 +89,20 @@ class Graf:
         file.close()
 
     def najkratsia_cesta(self,od,kam):
+        #pripravi graf
         for i in range(len(self.mapa)):
             self.mapa[i].nastav_vzdialenost(0)
         stack = [self.mapa[od]]
         dlzka = 0
+        #pokial ma susedov
         while stack != []:
             pocet = len(stack)
             for i in range(len(stack)):
+                #nasiel
                 if stack[i] == self.mapa[kam]:
                     return dlzka
                 susedia = stack[i].zisti_susedov()
+                #prida susedov na stack
                 for i2 in range(len(susedia)):
                     if susedia[i2].zisti_vzdialenost() == 0:
                         susedia[i2].nastav_vzdialenost(dlzka)
@@ -106,4 +110,5 @@ class Graf:
             for i in range(pocet):
                 stack.pop(0)
             dlzka += 1
+        #nie su spojeny
         return -1
