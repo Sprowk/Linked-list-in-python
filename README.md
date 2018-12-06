@@ -1,0 +1,1 @@
+This is an educational project created by Alexander Matuska.
