@@ -52,9 +52,11 @@ class Graf:
         self.vykresli_graf()
 
     def uloz(self,nazov):
+        #ak existuje tak vycisti
         file = open(str(nazov).strip()+'.txt', mode='w')
         file.write('')
         file.close()
+        #pisanie do subora
         file = open(str(nazov).strip() + '.txt', mode='a')
         for i in range(len(self.mapa)):
             pos = self.mapa[i].zisti_pos()
@@ -64,7 +66,7 @@ class Graf:
             ulozeny_sus = []
             id = self.mapa[i].zisti_id()
             for i2 in range(len(sus)):
-                ulozeny_sus.append(i)#sus[i].zisti_id())
+                ulozeny_sus.append(i)
             file.write(str(pos[0])+' '+str(pos[1])+' '+str(farba)+' '+str(info)+' '+str(ulozeny_sus)+'\n')
         file.close()
 
