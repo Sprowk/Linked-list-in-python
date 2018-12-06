@@ -71,4 +71,24 @@ class Graf:
         file.close()
 
     def nacitaj(self,nazov):
-        pass
+        self.biggest_id = 0
+        file = open(str(nazov).strip() + '.txt', mode='r')
+        data = file.readlines()
+        self.mapa = []
+        self.cnv.delete("all")
+        susedia = []
+        for i in range(len(data)):
+            node = data[i].split(' ')
+            print(node)
+            self.pridaj(int(node[0]),int(node[1]),node[3])
+            self.mapa[i].zapis_farbu(node[2])
+            susedia.append(node[4][1:-2])
+        print(susedia)
+        for i in range(len(susedia)):
+            for i2 in range(len(susedia[i])):
+                if susedia[i][i2] != '':
+                    print('moj sused: '+str(susedia[i][i2]))
+                    #self.novy_sused(i,int(susedia[i][i2])-1)
+                    self.mapa[i].pristahovat(self.mapa[int(susedia[i][i2])-1])
+        self.vykresli_graf()
+        file.close()
