@@ -30,3 +30,17 @@ class Graf:
 
     def zisti_priemer(self):
         return self.size
+
+    def nahodna_farba(self):
+        cisla = ['0', '1', '2',
+                 '3', '4', '5', '6', '7',
+                 '8', '9', 'A', 'C', 'B',
+                 'D', 'E', 'F']
+
+        farba = '#'
+        for j in range(6):
+            farba = farba + cisla[randint(0, 15)]
+        return farba
+
+    def zafarbi(self):
+        pass

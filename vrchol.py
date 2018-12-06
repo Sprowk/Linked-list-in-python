@@ -39,8 +39,17 @@ class Vrchol:
     def zisti_pos(self):
         return [self.x,self.y]
 
+    def zisti_farbu(self):
+        return self.farba
+
+    def zapis_farbu(self,pfarba):
+        self.farba = pfarba
+
     def zisti_susedov(self):
         return self.sus
 
     def zisti_id(self):
         return self.id
+
+    def zafarbi(self,farba):
+        pass

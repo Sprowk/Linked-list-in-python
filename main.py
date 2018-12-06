@@ -25,6 +25,10 @@ def pohyb(event):
         Mygraf.pridaj(event.x, event.y, e.get())
         prvy = -1
 
+def farba():
+    Mygraf.zafarbi()
+    
+Button(text='Farebny svet',command=farba).pack()
 c.bind('<Button-1>', pohyb)
 
 e=Entry()
