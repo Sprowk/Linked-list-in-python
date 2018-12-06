@@ -18,8 +18,6 @@ class Graf:
         self.biggest_id += 1
 
     def novy_sused(self,od,ku):
-        print('od: '+str(od))
-        print('ku: '+str(ku))
         self.mapa[od].pristahovat(self.mapa[ku])
         self.mapa[ku].pristahovat(self.mapa[od])
         self.vykresli_graf()
