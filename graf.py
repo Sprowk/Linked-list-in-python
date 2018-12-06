@@ -50,3 +50,9 @@ class Graf:
         for i in range(len(self.mapa)):
             self.mapa[i].zafarbi(self.nahodna_farba())
         self.vykresli_graf()
+
+    def uloz(self,nazov):
+        pass
+
+    def nacitaj(self,nazov):
+        pass
