@@ -37,6 +37,7 @@ def load():
 Button(text='Farebny svet',command=farba).pack()
 Button(text='SAVE',command=save).pack()
 Button(text='LOAD',command=load).pack()
+
 c.bind('<Button-1>', pohyb)
 
 e=Entry()

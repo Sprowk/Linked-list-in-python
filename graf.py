@@ -63,10 +63,10 @@ class Graf:
             farba = self.mapa[i].zisti_farbu()
             info = self.mapa[i].zisti_info()
             sus = self.mapa[i].zisti_susedov()
-            ulozeny_sus = []
-            id = self.mapa[i].zisti_id()
+            ulozeny_sus = ""
             for i2 in range(len(sus)):
-                ulozeny_sus.append(i)
+                ulozeny_sus += str(sus[i2].zisti_id())+","
+            print(ulozeny_sus)
             file.write(str(pos[0])+' '+str(pos[1])+' '+str(farba)+' '+str(info)+' '+str(ulozeny_sus)+'\n')
         file.close()
 
@@ -79,16 +79,11 @@ class Graf:
         susedia = []
         for i in range(len(data)):
             node = data[i].split(' ')
-            print(node)
             self.pridaj(int(node[0]),int(node[1]),node[3])
             self.mapa[i].zapis_farbu(node[2])
-            susedia.append(node[4][1:-2])
-        print(susedia)
+            susedia.append(node[-1].strip().split(","))
         for i in range(len(susedia)):
-            for i2 in range(len(susedia[i])):
-                if susedia[i][i2] != '':
-                    print('moj sused: '+str(susedia[i][i2]))
-                    #self.novy_sused(i,int(susedia[i][i2])-1)
-                    self.mapa[i].pristahovat(self.mapa[int(susedia[i][i2])-1])
+            for i2 in range(len(susedia[i])-1):
+                self.mapa[i].pristahovat(self.mapa[int(susedia[i][i2])])
         self.vykresli_graf()
         file.close()
