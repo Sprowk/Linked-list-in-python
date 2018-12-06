@@ -55,6 +55,7 @@ class Vrchol:
         if not self.rozliaty:
             self.rozliaty = True
             self.farba = farba
+            #susedov zafarbi na rovnaku farbu
             for i in range(len(self.sus)):
                 self.sus[i].zafarbi(farba)
 

@@ -29,6 +29,7 @@ def farba():
     Mygraf.zafarbi()
     
 Button(text='Farebny svet',command=farba).pack()
+
 c.bind('<Button-1>', pohyb)
 
 e=Entry()

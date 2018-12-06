@@ -43,9 +43,10 @@ class Graf:
         return farba
 
     def zafarbi(self):
-        #farby = ['red','blue','green','brown','yellow','purple']
+        #nastavi rozliaty na false
         for i in range(len(self.mapa)):
             self.mapa[i].odrozliat()
+        #iteruje cez vsetky vrcholy
         for i in range(len(self.mapa)):
             self.mapa[i].zafarbi(self.nahodna_farba())
         self.vykresli_graf()
