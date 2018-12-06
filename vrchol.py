@@ -52,4 +52,11 @@ class Vrchol:
         return self.id
 
     def zafarbi(self,farba):
-        pass
+        if not self.rozliaty:
+            self.rozliaty = True
+            self.farba = farba
+            for i in range(len(self.sus)):
+                self.sus[i].zafarbi(farba)
+
+    def odrozliat(self):
+        self.rozliaty = False
