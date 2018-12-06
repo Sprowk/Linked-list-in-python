@@ -8,6 +8,7 @@ class Vrchol:
         self.farba = "#FFFFFF"
         self.rozliaty = False
         self.id = pid
+        self.vzdialenost = 0
 
     def vykresli(self,cnv):
         for i in range(len(self.sus)):
@@ -61,3 +62,9 @@ class Vrchol:
 
     def odrozliat(self):
         self.rozliaty = False
+
+    def nastav_vzdialenost(self,dlzka):
+        self.vzdialenost = dlzka
+
+    def zisti_vzdialenost(self):
+        return self.vzdialenost

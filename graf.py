@@ -87,3 +87,6 @@ class Graf:
                 self.mapa[i].pristahovat(self.mapa[int(susedia[i][i2])])
         self.vykresli_graf()
         file.close()
+
+    def najkratsia_cesta(self,od,kam):
+        pass
