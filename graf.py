@@ -52,7 +52,21 @@ class Graf:
         self.vykresli_graf()
 
     def uloz(self,nazov):
-        pass
+        file = open(str(nazov).strip()+'.txt', mode='w')
+        file.write('')
+        file.close()
+        file = open(str(nazov).strip() + '.txt', mode='a')
+        for i in range(len(self.mapa)):
+            pos = self.mapa[i].zisti_pos()
+            farba = self.mapa[i].zisti_farbu()
+            info = self.mapa[i].zisti_info()
+            sus = self.mapa[i].zisti_susedov()
+            ulozeny_sus = []
+            id = self.mapa[i].zisti_id()
+            for i2 in range(len(sus)):
+                ulozeny_sus.append(i)#sus[i].zisti_id())
+            file.write(str(pos[0])+' '+str(pos[1])+' '+str(farba)+' '+str(info)+' '+str(ulozeny_sus)+'\n')
+        file.close()
 
     def nacitaj(self,nazov):
         pass
