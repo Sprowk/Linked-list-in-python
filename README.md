@@ -1,1 +1,1 @@
-This is an educational project created by Alexander Matuska.
+This is an educational project created by Alexander Matuška.
